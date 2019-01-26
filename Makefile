@@ -14,6 +14,8 @@ pages : $(addsuffix .html,$(PAGES))
 # page web
 %.html : %.md
 	pandoc $(CSS) -s $< -o $@
+%.html : %.gtm
+	gtml -F$< main.gtp
 
 # install -> build -> mirroir serveur web 
 .PHONY : install 

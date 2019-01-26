@@ -4,6 +4,7 @@
 $Id: index.gtm 7446 2015-02-18 11:42:08Z marquet $
 -->
 <!-- BBLLINK texte / texte de la bulle / url / short url -->
+#define BBLLINK(txt,bbl,url,srl) <span class="bb" ><a href="url" >txt</a><span><a href="url" >bbl<br /></a><a class="bbsee" href="url" >&nbsp;&nbsp;see srl</a></span></span>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
@@ -65,10 +66,10 @@ a.bbsee {
 <pre>
 % finger phm
 Login: phm                              Name: Philippe Marquet
-Directory: <span class="bb" ><a href="http://www.cristal.univ-lille.fr/profil/marquet" >/cristal</a><span><a href="http://www.cristal.univ-lille.fr/profil/marquet" >Philippe Marquet in the CRIStAL directory<br /></a><a class="bbsee" href="http://www.cristal.univ-lille.fr/profil/marquet" >&nbsp;&nbsp;see cristal.univ-lille.fr</a></span></span>         		Shell: /bin/tcsh
+Directory: <<BBLLINK(/cristal,Philippe Marquet in the CRIStAL directory,<<ANNUAIRE(marquet)>>,cristal.univ-lille.fr)>>         		Shell: /bin/tcsh
   Associate Professor in Computer Science
-  <span class="bb" ><a href="http://univ-lille.fr/" >Univ. Lille</a><span><a href="http://univ-lille.fr/" >Univ. Lille<br /></a><a class="bbsee" href="http://univ-lille.fr/" >&nbsp;&nbsp;see http://univ-lille.fr/</a></span></span>
-  <a href="mailto:philippe.marquet@univ-lille.fr"><code>philippe.marquet@univ-lille.fr</code></a>
+  <<BBLLINK(<<MY_UNIV_NAME>>,<<MY_UNIV_NAME>>,<<MY_UNIV_URL>>,<<MY_UNIV_URL>>)>>
+  <<MAILTO(<<MY_EMAIL>>)>>
 
 % getent phone phm
 phm:CRIStAL:+33 (0)3 28 77 85 61
@@ -85,7 +86,7 @@ phm:INRIA  :+33 (0)3 62 53 16 55
 >w3c-css-validator</a> ; echo $status
 0
 % date 
-Jan 26 2019, 21:05
+<<MTIMESTAMP>>
 </pre>
 </body>
 </html>

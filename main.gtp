@@ -1,0 +1,71 @@
+// $Id: main.gtp 7649 2017-01-31 12:28:48Z marquet $
+
+define DOCTYPE <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+define STYLE_FILE phm.css
+ 
+define MY_NAME Philippe Marquet
+define MY_SIG PhM
+define MY_EMAIL philippe.marquet@univ-lille.fr
+define MY_URL http://cristal.univ-lille.fr/~marquet/
+define MY_URL_REL ./<<ROOT_PATH>>
+
+define MY_LAB_URL http://www.cristal.univ-lille.fr/
+define MY_LAB_SIG CRIStAL
+define MY_LAB_NAME Centre de Recherche en Informatique, Signal et Automatique de Lille
+
+define MY_UNIV_URL http://univ-lille.fr/
+define MY_UNIV_SIG ULille
+define MY_UNIV_NAME Univ. Lille
+
+define GTML_URL http://www.lifl.fr/~beaufils/gtml/
+define DEA_URL http://www.lifl.fr/LIFL1/formations/dea.html
+define CALCUL_URL http://www.univ-lille1.fr/calcul-intensif/
+
+define ENS_URL http://www.cristal.univ-lille.fr/~marquet/ens
+
+
+// //                                      
+// // Macros misc.
+// //                                     
+
+define ANNUAIRE(user) <<MY_LAB_URL>>profil/user
+define NAMEANNUAIRE(name,user) <a href="<<MY_LAB_URL>>annuaire/employee.php?login=user" >name</a> 
+define PAGEPERSO(user) <<MY_LAB_URL>>~user/
+define NAMEPAGEPERSO(name,user) <a href="<<PAGEPERSO(user)>>" >name</a> 
+define INFRENCH <span class="inlinenote">(in French)</span>
+define MAILTO(email) <a href="mailto:email"><code>email</code></a>
+define URL(url) <a href="http://url"><code>url</code></a>
+define PATH(path) <code>path</code>
+define FUNCTION(f) <code>f()</code>
+define TYPE(t) <code>t</code>
+define VARIABLE(var) <code>var</code>
+define VVARIABLE(var) <code>$var</code>
+define COMMAND(cmd) <code>cmd</code>
+define SRCCODE(srccode) <code>srccode</code>
+define NOTE(txt) <span class="inlinenote">(txt)</span>
+
+mtimestamp $Mmm $dd $yyyy, $hh:$mm
+ 
+// Les caracteres 
+
+definechar ~: &nbsp;:
+definechar ~; &nbsp;;
+definechar ~! &nbsp;!
+definechar ~? &nbsp;?
+definechar ~~ &nbsp;
+definechar «~ «&nbsp;
+definechar ~» &nbsp;»
+
+// //
+// // Pages principales
+// //
+index.gtm 
+
+// //
+// // Pages d'erreur
+// //
+
+noaccess.gtm   
+noext.gtm   
+nourl.gtm
+// noen.gtm
